@@ -15,7 +15,9 @@ const app = express()
 app.use(cors())
 app.use(body_parser.urlencoded({extended : false}))
 app.use(body_parser.json())
-
+app.get('/',(req,res)=>{
+  res.send('hello everyone')
+})
 app.get('/all-blogs',(req,res) =>{
     Post.find()
     .then((result) =>{
